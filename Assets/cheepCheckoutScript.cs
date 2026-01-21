@@ -38,8 +38,6 @@ public class cheepCheckoutScript : MonoBehaviour
     bool unicorn = false;
     bool waiting = false;
 
-    //soundEffect = Audio.PlaySoundAtTransformWithRef("scream", transform);
-
     //Logging
     static int moduleIdCounter = 1;
     int moduleId;
@@ -375,7 +373,7 @@ public class cheepCheckoutScript : MonoBehaviour
         waiting = false;
     }
 
-    IEnumerator RedText ()
+    IEnumerator RedText()
     {
         OtherTexts[0].color = Colors[1];
         yield return new WaitForSeconds(1);
@@ -385,7 +383,7 @@ public class cheepCheckoutScript : MonoBehaviour
         OtherTexts[0].text = "$" + dollar(customerPrice);
     }
 
-    IEnumerator CorrectAnswer ()
+    IEnumerator CorrectAnswer()
     {
         OtherTexts[0].color = Colors[3];
         Audio.PlaySoundAtTransform("Rooster", transform);
@@ -401,7 +399,7 @@ public class cheepCheckoutScript : MonoBehaviour
         MainTexts[7].text = "E";
     }
 
-    IEnumerator UnicornSolve ()
+    IEnumerator UnicornSolve()
     {
         Debug.LogFormat("[Cheep Checkout #{0}] The customer is now dead, module solved.", moduleId);
         OtherTexts[0].color = Colors[3];
@@ -697,11 +695,12 @@ public class cheepCheckoutScript : MonoBehaviour
         {
             { "Filename", "CheepCheckoutSettings.json" },
             { "Name", "Cheep Checkout Settings" },
-            { "Listing", new List<Dictionary<string, object>>{
+            { "Listings", new List<Dictionary<string, object>>{
                 new Dictionary<string, object>
                 {
                     { "Key", "RandomizeButtons" },
-                    { "Text", "Determines whether or not the buttons get randomized." }
+                    { "Text", "Randomize Buttons" },
+                    { "Description", "Determines whether the buttons get randomized on press." }
                 },
             } }
         }
