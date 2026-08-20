@@ -503,6 +503,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4257340207950476}
+  - component: {fileID: 114283154927389368}
   - component: {fileID: 114915473299363512}
   - component: {fileID: 114454383462897410}
   - component: {fileID: 114853960920223876}
@@ -3345,6 +3346,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighlightScale: {x: 1, y: 1, z: 1}
   OutlineAmount: 0
+--- !u!114 &114283154927389368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1676409040304040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf69c2de51bd3c43bbd9bc22578ee08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _seed: 248
 --- !u!114 &114306847102105638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3596,6 +3609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bomb: {fileID: 114454383462897410}
   Audio: {fileID: 114915473299363512}
+  Ruleseed: {fileID: 114283154927389368}
   MainButtons:
   - {fileID: 114255038657277636}
   - {fileID: 114468768319314314}
