@@ -188,25 +188,28 @@ public class cheepCheckoutScript : MonoBehaviour
         answerPrice = customerPrice - birdPrice;
 
 
-
         // Check for Unicorn
-        if (ruleseedUnicornIsCheapCheckout)
+        if (hasUnicornBird)
         {
-            unicorn = Bomb.GetSolvableModuleNames().Contains("CheapCheckoutModule");
-        }
-        else
-        {
-            if (ruleseedUnicornIndicatorIsLit)
+            if (ruleseedUnicornIsCheapCheckout)
             {
-                unicorn = Bomb.IsIndicatorOn((Indicator)ruleseedUnicornIndicatorType);
+                unicorn = Bomb.GetSolvableModuleNames().Contains("CheapCheckoutModule");
             }
             else
             {
-                unicorn = Bomb.IsIndicatorOff((Indicator)ruleseedUnicornIndicatorType);
+                if (ruleseedUnicornIndicatorIsLit)
+                {
+                    unicorn = Bomb.IsIndicatorOn((Indicator)ruleseedUnicornIndicatorType);
+                }
+                else
+                {
+                    unicorn = Bomb.IsIndicatorOff((Indicator)ruleseedUnicornIndicatorType);
+                }
             }
         }
 
-        if (hasUnicornBird && unicorn)
+        
+        if (unicorn)
         {
             Debug.Log("<Cheep Checkout>" + "UNICORN IN EFFECT");
             Debug.LogFormat("[Cheep Checkout #{0}] Unicorn rule applies, please repeatedly slap the customer.", moduleId);
